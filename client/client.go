@@ -6,7 +6,9 @@ import (
 
 	"google.golang.org/grpc"
 	"github.com/canhtuan97/grpc/calculatorpb"
+
 )
+
 
 func callSum(c calculatorpb.CalculatorServiceClient) {
 	log.Println("calling sum api")
@@ -34,5 +36,5 @@ func main(){
 
 	client := calculatorpb.NewCalculatorServiceClient(cc)
 	callSum(client)
-	log.Printf("service client %f" ,client)
+	// log.Printf("service client %f" ,client)
 }
