@@ -1,11 +1,16 @@
 package main
 
 import (
-	"net"
+	"fmt"
 	"log"
-	"github.com/canhtuan97/grpc/calculatorpb"
+	"net"
+
 	"google.golang.org/grpc"
+
+	"../calculatorpb"
+
 )
+type server struct{}
 
 func main()  {
 	lis,err := net.Listen("tcp","0.0.0.0:50069")
