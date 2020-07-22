@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	//"../structs"
+
 	"github.com/canhtuan97/grpc/structs"
 	"log"
 

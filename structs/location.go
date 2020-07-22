@@ -3,12 +3,12 @@ package structs
 
 // Location is a single location.
 type ResponseLocation struct {
-	Areas []Areas
+	//Areas []Areas
 	GameIndices []GameIndices
 	ID    int    `json:"id"`
 	Name  string `json:"name"`
 	Names []Names
-	Region Region
+	//Region Region
 }
 //type Areas struct {
 //	Name string `json:"name"`
