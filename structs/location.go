@@ -1,4 +1,4 @@
-package structs
+//package structs
 
 
 // Location is a single location.

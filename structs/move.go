@@ -1,4 +1,4 @@
-package structs
+//package structs
 
 type ResponseMove struct {
 	ID           int    `json:"id"`
