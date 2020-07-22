@@ -1,4 +1,4 @@
-//package structs
+package structs
 
 
 // Location is a single location.
@@ -15,10 +15,7 @@ type Areas struct {
 	URL  string `json:"url"`
 }
 
-type GameIndices struct {
-	GameIndex  int `json:"game_index"`
-	Generation Generation
-}
+
 type Generation struct {
 	Name string `json:"name"`
 	URL  string `json:"url"`

@@ -1,4 +1,4 @@
-//package structs
+package structs
 
 type ResponseMove struct {
 	ID           int    `json:"id"`
@@ -45,9 +45,7 @@ type Ailment struct {
 type Category struct {
 	Name string `json:"name"`
 }
-type Type struct {
-	Name string `json:"name"`
-}
+
 type Target struct {
 	Name string `json:"name"`
 }
@@ -55,9 +53,7 @@ type StatChanges struct {
 	Change int `json:"change"`
 	Stat Stat
 }
-type Stat struct {
-	Name string `json:"name"`
-}
+
 
 type MoveService interface {
 	GetMoves() (*ResponseMove ,error)

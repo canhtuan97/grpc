@@ -3,32 +3,22 @@ package main
 import (
 	"fmt"
 
-	"github.com/canhtuan97/grpc/structs"
+	"../structs"
+	//"github.com/canhtuan97/grpc/structs"
 	"log"
-	"net"
-	
-	"google.golang.org/grpc"
 
-
-	
 )
-type server struct{}
+
 
 
 
 func main()  {
-	lis,err := net.Listen("tcp","0.0.0.0:50069")
-	if err != nil {
-		log.Fatalf("err while create listen  %v",err)
-	}
 
-	s := grpc.NewServer()
-	calculatorpb.RegisterCalculatorServiceServer(s, &server{})
-	
-	fmt.Println("calculator is running...")
-	err = s.Serve(lis)
-
+	client := structs.NewClient(" https://pokeapi.co/api/v2/pokemon/1")
+	data, err := client.Pokemon.GetPokemon()
 	if err != nil {
-		log.Fatalf("err while serve %v",err)
+		log.Fatal(err)
 	}
+	fmt.Println(data)
+
 }
