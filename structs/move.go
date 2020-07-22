@@ -61,6 +61,6 @@ type MoveService interface {
 type Move1 struct {
 	client *Client
 }
-func (s *Move1) GetMoves() (*ResponseMove ,error) {
-
-}
+//func (s *Move1) GetMoves() (*ResponseMove ,error) {
+//
+//}

@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	"../structs"
-	//"github.com/canhtuan97/grpc/structs"
+	//"../structs"
+	"github.com/canhtuan97/grpc/structs"
 	"log"
 
 )

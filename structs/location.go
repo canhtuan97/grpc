@@ -43,6 +43,6 @@ type Location struct {
 }
 
 
-func (s *Location) GetLocation() (*ResponsePokemon , error) {
-
-}
+//func (s *Location) GetLocation() (*ResponsePokemon , error) {
+//
+//}
