@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 
 	//"../structs"
@@ -14,11 +15,12 @@ import (
 
 func main()  {
 
-	client := structs.NewClient(" https://pokeapi.co/api/v2/pokemon/1")
+	client := structs.NewClient("https://pokeapi.co/api/v2/pokemon/1")
 	data, err := client.Pokemon.GetPokemon()
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(data)
+	strDat, _ := json.Marshal(data)
+	fmt.Println("string data: ", string(strDat))
 
 }

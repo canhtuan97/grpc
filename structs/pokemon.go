@@ -6,15 +6,15 @@ import (
 )
 
 type ResponsePokemon struct {
-	id                     int                      `json:"id"`
-	name                   string                   `json:"name"`
-	base_experience        int                      `json:"height"`
-	height                 int                      `json:"weight"`
-	is_default             int                      `json:"base_experience"`
-	order                  int                      `json:"order"`
-	weight                 int                      `json:"weight"`
-	abilities              []Abilities              `json:"abilities"`
-	forms                  []Forms                  `json:"forms"`
+	Id                     int                      `json:"id"`
+	Name                   string                   `json:"name"`
+	BaseExperience         int                      `json:"base_experience"`
+	Height                 int                      `json:"height"`
+	IsDefault              int                      `json:"is_default"`
+	Order                  int                      `json:"order"`
+	Weight                 int                      `json:"weight"`
+	Abilities              []Abilities              `json:"abilities"`
+	Forms                  []Forms                  `json:"forms"`
 	GameIndices            []GameIndices            `json:"game_indices"`
 	HeldItems              []HeldItems              `json:"held_items"`
 	LocationAreaEncounters []LocationAreaEncounters `json:"location_area_encounters"`
@@ -170,12 +170,12 @@ func (s *Pokemon) GetPokemon() (*ResponsePokemon, error) {
 	if err != nil {
 		return nil, err
 	}
-	pokemonResponse := &ResponsePokemon{}
+	pokemonResponse := ResponsePokemon{}
 	responseData, err := ioutil.ReadAll(res.Body)
 	if err != nil {
 		log.Fatal(err)
 	}
 	json.Unmarshal(responseData, &pokemonResponse)
 
-	return pokemonResponse, nil
+	return &pokemonResponse, nil
 }
