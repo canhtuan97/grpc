@@ -7,28 +7,28 @@ import (
 )
 
 type ResponseMove struct {
-	ID           int    `json:"id"`
-	Name         string `json:"name"`
-	Accuracy     int    `json:"accuracy"`
-	EffectChance int    `json:"effect_chance"`
-	PP           int    `json:"pp"`
-	Priority     int    `json:"priority"`
-	Power        int    `json:"power"`
-	ContestCombos  ContestCombos `json:"contest_combos"`
-	ContestType ContestType
-	ContestEffect ContestEffect
-	DamageClass DamageClass
-	EffectEntries EffectEntries
-	EffectChanges EffectChanges
-	Generation Generation
-	Meta Meta
-	Names []Names
-	PastValues []PastValues
-	StatChanges []StatChanges
-	SuperContestEffect SuperContestEffect
-	Target Target
-	Type Type
-	FlavorTextEntries []FlavorTextEntries
+	ID                 int                 `json:"id"`
+	Name               string              `json:"name"`
+	Accuracy           int                 `json:"accuracy"`
+	EffectChance       int                 `json:"effect_chance"`
+	PP                 int                 `json:"pp"`
+	Priority           int                 `json:"priority"`
+	Power              int                 `json:"power"`
+	ContestCombos      ContestCombos       `json:"contest_combos"`
+	ContestType        ContestType         `json:"contest_type"`
+	ContestEffect      ContestEffect       `json:"contest_effect"`
+	DamageClass        DamageClass         `json:"damage_class"`
+	EffectEntries      EffectEntries       `json:"effect_entries"`
+	EffectChanges      EffectChanges       `json:"effect_changes"`
+	Generation         Generation          `json:"generation"`
+	Meta               Meta                `json:"meta"`
+	Names              []Names             `json:"names"`
+	PastValues         []PastValues        `json:"past_values"`
+	StatChanges        []StatChanges       `json:"stat_changes"`
+	SuperContestEffect SuperContestEffect  `json:"super_contest_effect"`
+	Target             Target              `json:"target"`
+	Type               Type                `json:"type"`
+	FlavorTextEntries  []FlavorTextEntries `json:"flavor_text_entries"`
 }
 
 type PastValues struct {
