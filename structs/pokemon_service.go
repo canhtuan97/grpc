@@ -1,9 +1,6 @@
 package structs
 
 import (
-	"fmt"
-	"io/ioutil"
-	"log"
 	"net/http"
 )
 
@@ -41,20 +38,20 @@ func NewClient(baseUrl string) *Client {
 }
 
 
-func main() {
-
-	client := NewClient(" https://pokeapi.co/api/v2/pokemon/1")
-
-	//res , err := http.Get("https://pokeapi.co/api/v2/move/2")
-	if err != nil {
-		log.Fatal(err)
-	}
-	responseData, err := ioutil.ReadAll(res.Body)
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Println(string(responseData))
-}
-
-
-
+//func main() {
+//
+//	client := NewClient(" https://pokeapi.co/api/v2/pokemon/1")
+//
+//	//res , err := http.Get("https://pokeapi.co/api/v2/move/2")
+//	if err != nil {
+//		log.Fatal(err)
+//	}
+//	responseData, err := ioutil.ReadAll(res.Body)
+//	if err != nil {
+//		log.Fatal(err)
+//	}
+//	fmt.Println(string(responseData))
+//}
+//
+//
+//

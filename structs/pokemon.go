@@ -176,6 +176,6 @@ func (s *Pokemon) GetPokemon() (*ResponsePokemon, error) {
 		log.Fatal(err)
 	}
 	json.Unmarshal(responseData, &pokemonResponse)
-	////fmt.Println(string(responseData))
+
 	return pokemonResponse, nil
 }
