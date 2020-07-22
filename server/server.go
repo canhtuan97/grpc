@@ -15,8 +15,8 @@ import (
 
 func main()  {
 
-	client := structs.NewClient("https://pokeapi.co/api/v2/pokemon/1")
-	data, err := client.Pokemon.GetPokemon()
+	client := structs.NewClient("https://pokeapi.co/api/v2/move/1")
+	data, err := client.MoveGet.GetMoves()
 	if err != nil {
 		log.Fatal(err)
 	}

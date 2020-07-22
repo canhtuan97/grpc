@@ -161,11 +161,11 @@ type PokemonService interface {
 	GetPokemon() (*ResponsePokemon, error)
 }
 
-type Pokemon struct {
+type PokemonGet struct {
 	client *Client
 }
 
-func (s *Pokemon) GetPokemon() (*ResponsePokemon, error) {
+func (s *PokemonGet) GetPokemon() (*ResponsePokemon, error) {
 	res, err := s.client.Client.Get(s.client.baseUrl)
 	if err != nil {
 		return nil, err

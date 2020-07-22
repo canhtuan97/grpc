@@ -21,8 +21,8 @@ type Client struct {
 	Client  *http.Client
 	baseUrl string
 
-	Pokemon  PokemonService
-	//Move1    MoveService
+	PokemonGet PokemonService
+	MoveGet    MoveService
 	//Location LocationService
 }
 
@@ -31,12 +31,26 @@ func NewClient(baseUrl string) *Client {
 
 	c := &Client{Client: httpClient, baseUrl: baseUrl}
 
-	c.Pokemon = &Pokemon{client: c}
-	//c.Move1 = &Move1{client: c}
+	c.PokemonGet = &PokemonGet{client: c}
+	c.MoveGet = &MoveGet{client: c}
 	//c.Location = &Location{client: c}
 	return c
 }
 
+//func (s *Pokemon) GetPokemon() (*ResponsePokemon, error) {
+//	res, err := s.client.Client.Get(s.client.baseUrl)
+//	if err != nil {
+//		return nil, err
+//	}
+//	pokemonResponse := ResponsePokemon{}
+//	responseData, err := ioutil.ReadAll(res.Body)
+//	if err != nil {
+//		log.Fatal(err)
+//	}
+//	json.Unmarshal(responseData, &pokemonResponse)
+//
+//	return &pokemonResponse, nil
+//}
 
 //func main() {
 //
