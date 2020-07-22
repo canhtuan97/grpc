@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package calculator;
+
+option go_package="app-serverpb";
+
+message MoveRequest{
+    int32 id = 1;
+}
+
+message MoveResponse{
+    repeated Move iteam = 1
+}
+
+service GetMove {
+    returns (MoveResponse) {}
+}
