@@ -4,7 +4,7 @@
 // 	protoc        v3.12.1
 // source: proto/DemoGateway.proto
 
-package app_serverpb
+package example
 
 import (
 	context "context"

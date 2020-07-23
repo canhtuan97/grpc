@@ -3,11 +3,13 @@ package main
 import (
 	"context"
 	"fmt"
+
+	"log"
+	"net"
 	"github.com/canhtuan97/grpc/proto"
 	"github.com/canhtuan97/grpc/structs"
 	"google.golang.org/grpc"
-	"log"
-	"net"
+
 )
 
 type server struct{}

@@ -1,8 +1,4 @@
 gen-cal:
-	protoc calculatorpb/calculator.proto  --go_out=plugins=grpc:.
-gen-app-server:
-    protoc proto/app-server.proto --go_out=plugins=grpc:.
-gen-gateway:
-    protoc proto/DemoGateway.proto --go_out=plugins=grpc:. --grpc-gateway_out=:pb --swagger_out=:swagger
+    protoc proto/*.proto --go_out=paths=source_relative,plugins=grpc:. --grpc-gateway_out=logtostderr=true,paths=source_relative:.
 run-server:
 	go run server/server.go
