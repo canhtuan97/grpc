@@ -4,10 +4,13 @@ go 1.13
 
 require (
 	github.com/golang/protobuf v1.4.2
-	github.com/mtslzr/pokeapi-go v1.4.0 // indirect
-	github.com/pkg/errors v0.9.1 // indirect
-	github.com/satori/go.uuid v1.2.0 // indirect
-	github.com/velovix/snoreslacks v0.0.0-20160927014624-f93557e546c3 // indirect
+	github.com/grpc-ecosystem/grpc-gateway v1.14.6
+	github.com/rephus/grpc-gateway-example v0.0.0-20170622174155-f9caf363dd6c // indirect
+	golang.org/x/net v0.0.0-20200707034311-ab3426394381 // indirect
+	golang.org/x/sys v0.0.0-20200722175500-76b94024e4b6 // indirect
+	golang.org/x/text v0.3.3 // indirect
+	google.golang.org/genproto v0.0.0-20200722002428-88e341933a54
 	google.golang.org/grpc v1.30.0
 	google.golang.org/protobuf v1.25.0
+	gopkg.in/yaml.v2 v2.3.0 // indirect
 )

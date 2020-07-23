@@ -1,31 +1,27 @@
 package main
 
 import (
-	"log"
 	"context"
+	"log"
 
+	"github.com/canhtuan97/grpc/proto"
 	"google.golang.org/grpc"
-	"github.com/canhtuan97/grpc/calculatorpb"
-
 )
 
 
-func callSum(c calculatorpb.CalculatorServiceClient) {
-	log.Println("calling sum api")
-	resp, err := c.Sum(context.Background(), &calculatorpb.SumRequest{
-		Num1: 5,
-		Num2: 6,
+func callGetPokemon(p app_serverpb.PokemonServiceClient) {
+	log.Println("Get pokemon is running...")
+	_, err := p.GetPokemon(context.Background(), &app_serverpb.PokemonRequest{
+		Url: "https://pokeapi.co/api/v2/move/1",
 	})
-
 	if err != nil {
-		log.Fatalf("call sum api err %v", err)
+		log.Fatalf("call Getpokemon api err %v", err)
 	}
 
-	log.Printf("sum api response %v\n", resp.GetResult())
 }
 
 func main(){
-	cc,err := grpc.Dial("localhoast:50069",grpc.WithInsecure())
+	cc,err := grpc.Dial("127.0.0.1:50069",grpc.WithInsecure())
 
 	if err !=nil {
 		log.Fatalf("err while dial %v" ,err)
@@ -34,7 +30,7 @@ func main(){
 	// dong ket noi
 	defer cc.Close()
 
-	client := calculatorpb.NewCalculatorServiceClient(cc)
-	callSum(client)
-	// log.Printf("service client %f" ,client)
+	//client := app_serverpb.NewCalculatorServiceClient(cc)
+	client := app_serverpb.NewPokemonServiceClient(cc)
+	callGetPokemon(client)
 }

@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	"encoding/json"
 	"fmt"
 	"github.com/canhtuan97/grpc/proto"
 	"github.com/canhtuan97/grpc/structs"
@@ -22,32 +21,34 @@ func (*server) GetPokemon(ctx context.Context, req *app_serverpb.PokemonRequest)
 	}
 	//strDat, _ := json.Marshal(data)
 	resp := &app_serverpb.PokemonResponse{
-		Id:             data.Id,
+		Id:             int32(data.Id),
 		Name:           data.Name,
-		BaseExperience: data.BaseExperience,
-		Height:         data.Height,
+		BaseExperience: int32(data.BaseExperience),
+		Height:         int32(data.Height),
 	}
+	fmt.Println(resp)
 	return resp,nil
 }
 
 //func (s server) GetPokemon(ctx context.Context, request *app_serverpb.MoveRequest) (*app_serverpb.MoveResponse, error) {
 //	panic("implement me")
 //}
+//
+//func Test()  {
+//	fmt.Printf("Starting server at port 8080\n")
+//
+//	client := structs.NewClient("https://pokeapi.co/api/v2/move/1")
+//	data, err := client.MoveGet.GetMoves()
+//	if err != nil {
+//		log.Fatal(err)
+//	}
+//	strDat, _ := json.Marshal(data)
+//	fmt.Println("string data: ", string(strDat))
+//}
 
-func Test()  {
-	fmt.Printf("Starting server at port 8080\n")
-
-	client := structs.NewClient("https://pokeapi.co/api/v2/move/1")
-	data, err := client.MoveGet.GetMoves()
-	if err != nil {
-		log.Fatal(err)
-	}
-	strDat, _ := json.Marshal(data)
-	fmt.Println("string data: ", string(strDat))
-}
 func main() {
 
-	lis ,err := net.Listen("tpc","0.0.0.0:50069")
+	lis ,err := net.Listen("tcp","0.0.0.0:50069")
 	if err != nil {
 		log.Fatalf("err while create listen %v", err)
 	}
