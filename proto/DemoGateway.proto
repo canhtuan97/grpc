@@ -1,7 +1,6 @@
 syntax = "proto3";
 package example;
-
-    import "google/api/annotations.proto";
+import "google/api/annotations.proto";
 
 message StringMessage {
   string value = 1;

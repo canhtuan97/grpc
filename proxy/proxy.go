@@ -9,7 +9,7 @@ import (
 	"github.com/grpc-ecosystem/grpc-gateway/runtime"
 	"google.golang.org/grpc"
 
-	gw "github.com/yourorg/yourrepo/proto/gen/go/your/service/v1/your_service"  // Update
+	gw "github.com/canhtuan97/grpc/proto"  // Update
 )
 
 var (
