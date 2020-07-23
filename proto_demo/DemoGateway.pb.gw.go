@@ -2,7 +2,7 @@
 // source: proto/DemoGateway.proto
 
 /*
-Package example is a reverse proxy.
+Package example is a reverse proto_demo.
 
 It translates gRPC into RESTful JSON APIs.
 */
