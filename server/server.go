@@ -13,8 +13,21 @@ import (
 
 type server struct{}
 
-func (*server) GetPokemon(ctx context.Context, req *app_serverpb.PokemonRequest) (*app_serverpb.MoveResponse, error) {
-	panic("implement me")
+func (*server) GetPokemon(ctx context.Context, req *app_serverpb.PokemonRequest) (*app_serverpb.PokemonResponse, error) {
+	log.Println("Get pokemon running...")
+	client := structs.NewClient(req.Url)
+	data, err := client.PokemonGet.GetPokemon()
+	if err != nil {
+		log.Fatal(err)
+	}
+	//strDat, _ := json.Marshal(data)
+	resp := &app_serverpb.PokemonResponse{
+		Id:             data.Id,
+		Name:           data.Name,
+		BaseExperience: data.BaseExperience,
+		Height:         data.Height,
+	}
+	return resp,nil
 }
 
 //func (s server) GetPokemon(ctx context.Context, request *app_serverpb.MoveRequest) (*app_serverpb.MoveResponse, error) {
