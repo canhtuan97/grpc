@@ -5,14 +5,14 @@ package calculator;
 option go_package="app-serverpb";
 
 message PokemonRequest{
-    string url = 1;
+     string url = 1;
 }
 
 message PokemonResponse{
-    int64 id = 1;
-    string name = 2;
-    int64 base_experience = 3;
-    int64 Height = 4;
+     int32 id = 1;
+     string name = 2;
+     int32 base_experience = 3;
+     int32 Height = 4;
 }
 
 service PokemonService {
