@@ -14,7 +14,7 @@ import (
 
 type server struct{}
 
-func (*server) GetPokemon(ctx context.Context, req *app_serverpb.PokemonRequest) (*app_serverpb.PokemonResponse, error) {
+func (*server) GetPokemon(ctx context.Context, req *PokemonRequest) (*PokemonResponse, error) {
 	log.Println("Get pokemon running...")
 	client := structs.NewClient(req.Url)
 	data, err := client.PokemonGet.GetPokemon()
@@ -22,7 +22,7 @@ func (*server) GetPokemon(ctx context.Context, req *app_serverpb.PokemonRequest)
 		log.Fatal(err)
 	}
 	//strDat, _ := json.Marshal(data)
-	resp := &app_serverpb.PokemonResponse{
+	resp := &PokemonResponse{
 		Id:             int32(data.Id),
 		Name:           data.Name,
 		BaseExperience: int32(data.BaseExperience),
@@ -57,7 +57,7 @@ func main() {
 
 	s := grpc.NewServer()
 
-	app_serverpb.RegisterPokemonServiceServer(s , &server{})
+	RegisterPokemonServiceServer(s , &server{})
 
 	fmt.Println("Server running ...")
 
