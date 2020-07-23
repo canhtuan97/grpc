@@ -13,7 +13,7 @@ import (
 
 type server struct{}
 
-func (*server) GetPokemon(ctx context.Context, req *app_serverpb.MoveRequest) (*app_serverpb.MoveResponse, error) {
+func (*server) GetPokemon(ctx context.Context, req *app_serverpb.PokemonRequest) (*app_serverpb.MoveResponse, error) {
 	panic("implement me")
 }
 

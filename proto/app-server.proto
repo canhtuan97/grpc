@@ -16,5 +16,5 @@ message PokemonResponse{
 }
 
 service PokemonService {
-    rpc GetPokemon(MoveRequest) returns (MoveResponse) {}
+    rpc GetPokemon(PokemonRequest) returns (PokemonResponse) {}
 }

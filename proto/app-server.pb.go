@@ -29,7 +29,7 @@ const (
 // of the legacy proto package is being used.
 const _ = proto.ProtoPackageIsVersion4
 
-type MoveRequest struct {
+type PokemonRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -37,8 +37,8 @@ type MoveRequest struct {
 	Url string `protobuf:"bytes,1,opt,name=url,proto3" json:"url,omitempty"`
 }
 
-func (x *MoveRequest) Reset() {
-	*x = MoveRequest{}
+func (x *PokemonRequest) Reset() {
+	*x = PokemonRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_proto_app_server_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -46,13 +46,13 @@ func (x *MoveRequest) Reset() {
 	}
 }
 
-func (x *MoveRequest) String() string {
+func (x *PokemonRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*MoveRequest) ProtoMessage() {}
+func (*PokemonRequest) ProtoMessage() {}
 
-func (x *MoveRequest) ProtoReflect() protoreflect.Message {
+func (x *PokemonRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_proto_app_server_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -64,19 +64,19 @@ func (x *MoveRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use MoveRequest.ProtoReflect.Descriptor instead.
-func (*MoveRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use PokemonRequest.ProtoReflect.Descriptor instead.
+func (*PokemonRequest) Descriptor() ([]byte, []int) {
 	return file_proto_app_server_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *MoveRequest) GetUrl() string {
+func (x *PokemonRequest) GetUrl() string {
 	if x != nil {
 		return x.Url
 	}
 	return ""
 }
 
-type MoveResponse struct {
+type PokemonResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -87,8 +87,8 @@ type MoveResponse struct {
 	Height         int32  `protobuf:"varint,4,opt,name=Height,json=height,proto3" json:"Height,omitempty"`
 }
 
-func (x *MoveResponse) Reset() {
-	*x = MoveResponse{}
+func (x *PokemonResponse) Reset() {
+	*x = PokemonResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_proto_app_server_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -96,13 +96,13 @@ func (x *MoveResponse) Reset() {
 	}
 }
 
-func (x *MoveResponse) String() string {
+func (x *PokemonResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*MoveResponse) ProtoMessage() {}
+func (*PokemonResponse) ProtoMessage() {}
 
-func (x *MoveResponse) ProtoReflect() protoreflect.Message {
+func (x *PokemonResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_proto_app_server_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -114,33 +114,33 @@ func (x *MoveResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use MoveResponse.ProtoReflect.Descriptor instead.
-func (*MoveResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use PokemonResponse.ProtoReflect.Descriptor instead.
+func (*PokemonResponse) Descriptor() ([]byte, []int) {
 	return file_proto_app_server_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *MoveResponse) GetId() int32 {
+func (x *PokemonResponse) GetId() int32 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *MoveResponse) GetName() string {
+func (x *PokemonResponse) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-func (x *MoveResponse) GetBaseExperience() int32 {
+func (x *PokemonResponse) GetBaseExperience() int32 {
 	if x != nil {
 		return x.BaseExperience
 	}
 	return 0
 }
 
-func (x *MoveResponse) GetHeight() int32 {
+func (x *PokemonResponse) GetHeight() int32 {
 	if x != nil {
 		return x.Height
 	}
@@ -152,23 +152,24 @@ var File_proto_app_server_proto protoreflect.FileDescriptor
 var file_proto_app_server_proto_rawDesc = []byte{
 	0x0a, 0x16, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x61, 0x70, 0x70, 0x2d, 0x73, 0x65, 0x72, 0x76,
 	0x65, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x0a, 0x63, 0x61, 0x6c, 0x63, 0x75, 0x6c,
-	0x61, 0x74, 0x6f, 0x72, 0x22, 0x1f, 0x0a, 0x0b, 0x4d, 0x6f, 0x76, 0x65, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x12, 0x10, 0x0a, 0x03, 0x75, 0x72, 0x6c, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
-	0x52, 0x03, 0x75, 0x72, 0x6c, 0x22, 0x73, 0x0a, 0x0c, 0x4d, 0x6f, 0x76, 0x65, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
-	0x05, 0x52, 0x02, 0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x27, 0x0a, 0x0f, 0x62, 0x61, 0x73,
-	0x65, 0x5f, 0x65, 0x78, 0x70, 0x65, 0x72, 0x69, 0x65, 0x6e, 0x63, 0x65, 0x18, 0x03, 0x20, 0x01,
-	0x28, 0x05, 0x52, 0x0e, 0x62, 0x61, 0x73, 0x65, 0x45, 0x78, 0x70, 0x65, 0x72, 0x69, 0x65, 0x6e,
-	0x63, 0x65, 0x12, 0x16, 0x0a, 0x06, 0x48, 0x65, 0x69, 0x67, 0x68, 0x74, 0x18, 0x04, 0x20, 0x01,
-	0x28, 0x05, 0x52, 0x06, 0x68, 0x65, 0x69, 0x67, 0x68, 0x74, 0x32, 0x53, 0x0a, 0x0e, 0x50, 0x6f,
-	0x6b, 0x65, 0x6d, 0x6f, 0x6e, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x41, 0x0a, 0x0a,
-	0x47, 0x65, 0x74, 0x50, 0x6f, 0x6b, 0x65, 0x6d, 0x6f, 0x6e, 0x12, 0x17, 0x2e, 0x63, 0x61, 0x6c,
-	0x63, 0x75, 0x6c, 0x61, 0x74, 0x6f, 0x72, 0x2e, 0x4d, 0x6f, 0x76, 0x65, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x1a, 0x18, 0x2e, 0x63, 0x61, 0x6c, 0x63, 0x75, 0x6c, 0x61, 0x74, 0x6f, 0x72,
-	0x2e, 0x4d, 0x6f, 0x76, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42,
-	0x0e, 0x5a, 0x0c, 0x61, 0x70, 0x70, 0x2d, 0x73, 0x65, 0x72, 0x76, 0x65, 0x72, 0x70, 0x62, 0x62,
-	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x61, 0x74, 0x6f, 0x72, 0x22, 0x22, 0x0a, 0x0e, 0x50, 0x6f, 0x6b, 0x65, 0x6d, 0x6f, 0x6e, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x10, 0x0a, 0x03, 0x75, 0x72, 0x6c, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x03, 0x75, 0x72, 0x6c, 0x22, 0x76, 0x0a, 0x0f, 0x50, 0x6f, 0x6b, 0x65,
+	0x6d, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69,
+	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x52, 0x02, 0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x6e,
+	0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12,
+	0x27, 0x0a, 0x0f, 0x62, 0x61, 0x73, 0x65, 0x5f, 0x65, 0x78, 0x70, 0x65, 0x72, 0x69, 0x65, 0x6e,
+	0x63, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x05, 0x52, 0x0e, 0x62, 0x61, 0x73, 0x65, 0x45, 0x78,
+	0x70, 0x65, 0x72, 0x69, 0x65, 0x6e, 0x63, 0x65, 0x12, 0x16, 0x0a, 0x06, 0x48, 0x65, 0x69, 0x67,
+	0x68, 0x74, 0x18, 0x04, 0x20, 0x01, 0x28, 0x05, 0x52, 0x06, 0x68, 0x65, 0x69, 0x67, 0x68, 0x74,
+	0x32, 0x59, 0x0a, 0x0e, 0x50, 0x6f, 0x6b, 0x65, 0x6d, 0x6f, 0x6e, 0x53, 0x65, 0x72, 0x76, 0x69,
+	0x63, 0x65, 0x12, 0x47, 0x0a, 0x0a, 0x47, 0x65, 0x74, 0x50, 0x6f, 0x6b, 0x65, 0x6d, 0x6f, 0x6e,
+	0x12, 0x1a, 0x2e, 0x63, 0x61, 0x6c, 0x63, 0x75, 0x6c, 0x61, 0x74, 0x6f, 0x72, 0x2e, 0x50, 0x6f,
+	0x6b, 0x65, 0x6d, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1b, 0x2e, 0x63,
+	0x61, 0x6c, 0x63, 0x75, 0x6c, 0x61, 0x74, 0x6f, 0x72, 0x2e, 0x50, 0x6f, 0x6b, 0x65, 0x6d, 0x6f,
+	0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x0e, 0x5a, 0x0c, 0x61,
+	0x70, 0x70, 0x2d, 0x73, 0x65, 0x72, 0x76, 0x65, 0x72, 0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f,
+	0x74, 0x6f, 0x33,
 }
 
 var (
@@ -185,12 +186,12 @@ func file_proto_app_server_proto_rawDescGZIP() []byte {
 
 var file_proto_app_server_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_proto_app_server_proto_goTypes = []interface{}{
-	(*MoveRequest)(nil),  // 0: calculator.MoveRequest
-	(*MoveResponse)(nil), // 1: calculator.MoveResponse
+	(*PokemonRequest)(nil),  // 0: calculator.PokemonRequest
+	(*PokemonResponse)(nil), // 1: calculator.PokemonResponse
 }
 var file_proto_app_server_proto_depIdxs = []int32{
-	0, // 0: calculator.PokemonService.GetPokemon:input_type -> calculator.MoveRequest
-	1, // 1: calculator.PokemonService.GetPokemon:output_type -> calculator.MoveResponse
+	0, // 0: calculator.PokemonService.GetPokemon:input_type -> calculator.PokemonRequest
+	1, // 1: calculator.PokemonService.GetPokemon:output_type -> calculator.PokemonResponse
 	1, // [1:2] is the sub-list for method output_type
 	0, // [0:1] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
@@ -205,7 +206,7 @@ func file_proto_app_server_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_proto_app_server_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*MoveRequest); i {
+			switch v := v.(*PokemonRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -217,7 +218,7 @@ func file_proto_app_server_proto_init() {
 			}
 		}
 		file_proto_app_server_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*MoveResponse); i {
+			switch v := v.(*PokemonResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -261,7 +262,7 @@ const _ = grpc.SupportPackageIsVersion6
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type PokemonServiceClient interface {
-	GetPokemon(ctx context.Context, in *MoveRequest, opts ...grpc.CallOption) (*MoveResponse, error)
+	GetPokemon(ctx context.Context, in *PokemonRequest, opts ...grpc.CallOption) (*PokemonResponse, error)
 }
 
 type pokemonServiceClient struct {
@@ -272,8 +273,8 @@ func NewPokemonServiceClient(cc grpc.ClientConnInterface) PokemonServiceClient {
 	return &pokemonServiceClient{cc}
 }
 
-func (c *pokemonServiceClient) GetPokemon(ctx context.Context, in *MoveRequest, opts ...grpc.CallOption) (*MoveResponse, error) {
-	out := new(MoveResponse)
+func (c *pokemonServiceClient) GetPokemon(ctx context.Context, in *PokemonRequest, opts ...grpc.CallOption) (*PokemonResponse, error) {
+	out := new(PokemonResponse)
 	err := c.cc.Invoke(ctx, "/calculator.PokemonService/GetPokemon", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -283,14 +284,14 @@ func (c *pokemonServiceClient) GetPokemon(ctx context.Context, in *MoveRequest, 
 
 // PokemonServiceServer is the server API for PokemonService service.
 type PokemonServiceServer interface {
-	GetPokemon(context.Context, *MoveRequest) (*MoveResponse, error)
+	GetPokemon(context.Context, *PokemonRequest) (*PokemonResponse, error)
 }
 
 // UnimplementedPokemonServiceServer can be embedded to have forward compatible implementations.
 type UnimplementedPokemonServiceServer struct {
 }
 
-func (*UnimplementedPokemonServiceServer) GetPokemon(context.Context, *MoveRequest) (*MoveResponse, error) {
+func (*UnimplementedPokemonServiceServer) GetPokemon(context.Context, *PokemonRequest) (*PokemonResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPokemon not implemented")
 }
 
@@ -299,7 +300,7 @@ func RegisterPokemonServiceServer(s *grpc.Server, srv PokemonServiceServer) {
 }
 
 func _PokemonService_GetPokemon_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(MoveRequest)
+	in := new(PokemonRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -311,7 +312,7 @@ func _PokemonService_GetPokemon_Handler(srv interface{}, ctx context.Context, de
 		FullMethod: "/calculator.PokemonService/GetPokemon",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(PokemonServiceServer).GetPokemon(ctx, req.(*MoveRequest))
+		return srv.(PokemonServiceServer).GetPokemon(ctx, req.(*PokemonRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
