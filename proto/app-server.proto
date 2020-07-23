@@ -5,13 +5,16 @@ package calculator;
 option go_package="app-serverpb";
 
 message MoveRequest{
-    int32 id = 1;
+    string url = 1;
 }
 
 message MoveResponse{
-    repeated Move iteam = 1
+    int32 id = 1;
+    string name = 2;
+    int32 base_experience = 3;
+    int32 Height = 4;
 }
 
-service GetMove {
-    returns (MoveResponse) {}
+service PokemonService {
+    rpc GetPokemon(MoveRequest) returns (MoveResponse) {}
 }
