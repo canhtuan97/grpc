@@ -4,11 +4,11 @@ package calculator;
 
 option go_package="app-serverpb";
 
-message MoveRequest{
+message PokemonRequest{
     string url = 1;
 }
 
-message MoveResponse{
+message PokemonResponse{
     int32 id = 1;
     string name = 2;
     int32 base_experience = 3;
