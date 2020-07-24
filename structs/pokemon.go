@@ -1,4 +1,5 @@
 package structs
+
 import (
 	"encoding/json"
 	"io/ioutil"
@@ -179,3 +180,15 @@ func (s *PokemonGet) GetPokemon() (*ResponsePokemon, error) {
 
 	return &pokemonResponse, nil
 }
+
+//func (s *PokemonGet) GetPokemon() (*ResponsePokemon, error) {
+//	res, err := s.client.Client.Get(s.client.baseUrl)
+//	if err != nil {
+//		return nil, err
+//	}
+//	pokemonResponse := ResponsePokemon{}
+//	data := MapUnmarshal(res,pokemonResponse)
+//	//json.Unmarshal(responseData, &pokemonResponse)
+//	fmt.Println(data)
+//	//return &data, nil
+//	return pokemonResponse

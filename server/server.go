@@ -5,7 +5,6 @@ import (
 	"fmt"
 
 	"github.com/canhtuan97/grpc/proto"
-	"github.com/canhtuan97/grpc/proto_demo"
 	"github.com/canhtuan97/grpc/structs"
 	"google.golang.org/grpc"
 	"log"
@@ -32,10 +31,12 @@ func (*server) GetPokemon(ctx context.Context, req *app_serverpb.PokemonRequest)
 	return resp,nil
 }
 
-func (*server) Echo(ctx context.Context, msg *example.StringMessage) (*example.StringMessage, error) {
-	log.Printf("receive msg %s\n", msg.GetValue())
-	return msg, nil
-}
+//func
+
+//func (*server) Echo(ctx context.Context, msg *example.StringMessage) (*example.StringMessage, error) {
+//	log.Printf("receive msg %s\n", msg.GetValue())
+//	return msg, nil
+//}
 //func (s server) GetPokemon(ctx context.Context, request *app_serverpb.MoveRequest) (*app_serverpb.MoveResponse, error) {
 //	panic("implement me")
 //}
@@ -62,7 +63,6 @@ func main() {
 	s := grpc.NewServer()
 
 	app_serverpb.RegisterPokemonServiceServer(s, &server{})
-	example.RegisterYourServiceServer(s, &server{})
 	fmt.Println("Server running ...")
 
 	err = s.Serve(lis)

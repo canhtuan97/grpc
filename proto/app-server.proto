@@ -16,11 +16,34 @@ message PokemonResponse{
      int32 Height = 4;
 }
 
-service PokemonService {
-    rpc GetPokemon(PokemonRequest) returns (PokemonResponse) {
-         option (google.api.http) = {
-              post: "/get_pokemon"
-              body: "*"
-         };
-    }
+message PokemonMoveRequest{
+     string urlPokemon = 1;
+     string urlMove = 2;
 }
+
+message  PokemonMoveResponse{
+     int32 Id = 1;
+     string Name = 2;
+     int32 BaseExperience = 3;
+     int32 Height = 4;
+     int32 Priority = 5;
+     int32 Power = 6;
+
+}
+
+service PokemonService {
+     rpc GetPokemon(PokemonRequest) returns (PokemonResponse) {
+          option (google.api.http) = {
+               post: "/get_pokemon"
+               body: "*"
+          };
+     }
+
+     rpc GetPokemonMove(PokemonMoveRequest) returns (PokemonMoveResponse){
+          option (google.api.http) = {
+               post: "/get_pokemon_move"
+               body: "*"
+          };
+     }
+}
+

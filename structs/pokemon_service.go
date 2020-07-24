@@ -1,6 +1,9 @@
 package structs
 
 import (
+	"encoding/json"
+	"io/ioutil"
+	"log"
 	"net/http"
 )
 
@@ -37,7 +40,14 @@ func NewClient(baseUrl string) *Client {
 	return c
 }
 
-//func MapUnmarshal()  {
-//
-//}
+//MapUnmarshal
+func MapUnmarshal(res *http.Response,resouce interface{})   error  {
+	responseData, err := ioutil.ReadAll(res.Body)
+	if err != nil {
+		log.Fatal(err)
+	}
+	dataConvert := json.Unmarshal(responseData, &resouce)
+	return dataConvert
+
+}
 
